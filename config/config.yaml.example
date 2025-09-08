@@ -1,0 +1,58 @@
+# InvestIQ Configuration File
+
+# Data Configuration
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  user_data_path: "data/user"
+  
+# Model Configuration
+model:
+  save_path: "models"
+  model_name: "latest.joblib"
+  algorithms:
+    - "ridge"
+    - "random_forest"
+    - "gradient_boosting"
+  cv_folds: 5
+  test_size: 0.2
+  
+# Feature Engineering
+features:
+  lookback_days: 252  # 1 year of trading days
+  technical_indicators:
+    - "rsi"
+    - "macd"
+    - "bollinger_bands"
+    - "moving_averages"
+  target_horizon: 5  # 5-day forward returns
+  
+# Prediction Configuration
+prediction:
+  confidence_threshold: 0.6
+  suggestion_thresholds:
+    strong_buy: 0.05
+    buy: 0.02
+    hold: -0.02
+    sell: -0.05
+    strong_sell: -0.1
+    
+# API Configuration
+api:
+  host: "127.0.0.1"
+  port: 8000
+  debug: true
+  
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/investiq.log"
+  max_size: "10MB"
+  backup_count: 5
+  
+# Data Sources
+sources:
+  yahoo_finance:
+    enabled: true
+    timeout: 30
+    retries: 3
