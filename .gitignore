@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+.venv/
+*.pyc
+.pytest_cache/
+
+# Node/Electron
+node_modules/
+dist/
+out/
+
+# macOS
+.DS_Store
+
+# Env files
+.env

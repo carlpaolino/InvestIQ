@@ -1,0 +1,30 @@
+# Core API framework
+fastapi
+uvicorn[standard]
+
+# Vision stack
+torch
+torchvision
+torchaudio
+opencv-python
+mss
+paddleocr
+pytesseract
+Pillow
+python-multipart
+pandas
+
+# Time-series and strategy models
+tensorflow
+keras
+
+# Language model tooling
+transformers
+datasets
+
+# Market and news data
+yfinance
+alpha_vantage
+
+# Developer tooling
+pytest

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>InvestLens Overlay</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 16px;
+        background: rgba(12, 16, 24, 0.92);
+        color: #f5f7fa;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+
+      h2 {
+        font-size: 16px;
+        margin-top: 24px;
+        margin-bottom: 8px;
+      }
+
+      .status {
+        font-size: 12px;
+        color: #7f8c9b;
+        margin-bottom: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 13px;
+      }
+
+      input,
+      button,
+      textarea {
+        width: 100%;
+        font-size: 14px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px;
+        margin-bottom: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        color: inherit;
+      }
+
+      button {
+        background: #2d8cff;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      button:disabled {
+        background: rgba(255, 255, 255, 0.2);
+        cursor: not-allowed;
+      }
+
+      .card {
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 12px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .sentiment {
+        font-weight: bold;
+      }
+
+      .sentiment[data-sentiment="bullish"] {
+        color: #4cd964;
+      }
+
+      .sentiment[data-sentiment="bearish"] {
+        color: #ff3b30;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>InvestLens Overlay</h1>
+    <div class="status" id="health-status">Connecting…</div>
+
+    <section>
+      <label for="ticker-input">Ticker Symbol</label>
+      <input id="ticker-input" value="AAPL" />
+      <button id="refresh-button">Fetch Market Summary</button>
+    </section>
+
+    <section class="card" id="market-summary">
+      <strong>Market summary will appear here.</strong>
+    </section>
+
+    <h2>Screen OCR</h2>
+    <input type="file" id="ocr-file" accept="image/*" />
+    <textarea
+      id="ocr-output"
+      rows="4"
+      placeholder="OCR output will appear here."
+    ></textarea>
+
+    <h2>AI Insight</h2>
+    <button id="insight-button">Generate Insight</button>
+    <section class="card" id="insight-output">
+      <strong>Insights will appear here.</strong>
+    </section>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
+
